@@ -1,7 +1,6 @@
 function openImagePage(imageUrl) {
-    var newWindow = window.open('', '_blank');
     var randomPrice = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
-    newWindow.document.write(`
+    document.body.innerHTML =`
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -13,6 +12,7 @@ function openImagePage(imageUrl) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         </head>
         <body>
+        <header>
             <nav>
 <img src="../img/website-logo.png" width="80px" style="position: absolute; left: 1px;">
 <ul>
@@ -42,10 +42,10 @@ function openImagePage(imageUrl) {
         <li><a href="PCs.html#storage">Storage</a></li>
         <li><a href="PCs.html#case">Cases</a></li>        
     </ul>
-</li>
+    </li>
 </ul>
-</nav>
-
+    </nav>
+</header>
 <div class="mainContent">
     <img src="../${imageUrl}" alt="Image" style="display: block; margin: auto;">
         <div style="text-align: center; margin-top: 10px; font-size:2em;">
@@ -79,6 +79,5 @@ function openImagePage(imageUrl) {
 </footer>
         </body>
         </html>
-    `);
-    newWindow.document.close();
+    `;
 }
