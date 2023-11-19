@@ -4,7 +4,6 @@ section {
     align-items: center;
     padding: 20px;
     overflow-x: auto; 
-    box-sizing: border-box;
 }
 
 section #xbox {
